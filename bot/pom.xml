@@ -38,6 +38,7 @@
         <module>connector-alcmeon</module>
         <module>connector-ga</module>
         <module>connector-slack</module>
+        <module>connector-mattermost</module>
         <module>connector-alexa</module>
         <module>connector-rocketchat</module>
         <module>connector-twitter</module>
@@ -134,6 +135,11 @@
             <dependency>
                 <groupId>ai.tock</groupId>
                 <artifactId>tock-bot-connector-slack</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.tock</groupId>
+                <artifactId>tock-bot-connector-mattermost</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
