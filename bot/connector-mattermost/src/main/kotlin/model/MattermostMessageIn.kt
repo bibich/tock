@@ -19,21 +19,21 @@ package ai.tock.bot.connector.mattermost.model
 import ai.tock.bot.engine.message.GenericMessage
 
 data class MattermostMessageIn(
-    val channelId: String,
-    val channelName: String,
-    val teamDomain: String,
-    val teamId: String,
-    val postId: String? = null,
+    val channel_id: String,
+    val channel_name: String,
+    val team_domain: String,
+    val team_id: String,
+    val post_id: String? = null,
     var text: String,
     val timestamp: Long? = null,
     val token: String,
-    val triggerWord: String? = "",
-    val userId: String,
-    val userName: String
+    val trigger_word: String? = "",
+    val user_id: String,
+    val user_name: String
 ) : MattermostConnectorMessage() {
 
     fun getRealMessage(): String {
-        return this.text.replace("${this.triggerWord} ", "")
+        return this.text.replace("${this.trigger_word} ", "")
     }
 
     override fun toGenericMessage(): GenericMessage =

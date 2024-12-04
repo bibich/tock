@@ -28,14 +28,15 @@ internal object MattermostRequestConverter {
     private val logger = KotlinLogging.logger {}
 
     fun toEvent(message: MattermostMessageIn, applicationId: String): Event {
-        message.text = message.getRealMessage()
+        val safeMessage = message
+        safeMessage.text = message.getRealMessage()
 
         return SendSentence(
-            PlayerId(message.userId),
+            PlayerId(message.user_id),
             applicationId,
             PlayerId("", bot),
-            message.text,
-            mutableListOf(message)
+            safeMessage.text,
+            mutableListOf(safeMessage)
         )
     }
 }
