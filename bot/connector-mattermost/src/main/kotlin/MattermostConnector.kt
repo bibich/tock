@@ -36,7 +36,7 @@ import mu.KotlinLogging
 import java.time.Duration
 
 class MattermostConnector(
-    val applicationId: String,
+    private val applicationId: String,
     private val path: String,
     private val url: String,
     private val token: String,
